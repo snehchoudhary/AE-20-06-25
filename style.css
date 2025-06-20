@@ -1,0 +1,836 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Heading */
+.T-PIMS{
+    min-height: 40vh;
+    background-image: url(0052A4.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding-top: 60px;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
+.T-PIMS .section-content{
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+.T-PIMS .section-head, .section-para{
+    font-family:  'Poppins', sans-serif;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+    margin: 1.5rem 0;
+    padding: 0 1rem;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+}
+.T-PIMS .section-head{
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+}
+.T-PIMS .section-para{
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
+    font-weight: 400;
+    padding: 1.5rem;
+}
+
+/* Responsive code for 2560px */
+@media screen and (min-width: 2560px) {
+  .T-PIMS {
+    padding-top: 100px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+  }
+
+  .T-PIMS .section-content {
+    max-width: 1600px;
+  }
+
+  .T-PIMS .section-head {
+    font-size: 3rem; /* Override clamp if needed */
+  }
+
+  .T-PIMS .section-para {
+    font-size: 1.75rem;
+    padding: 2rem 3rem;
+  }
+}
+
+
+/* Responsive code for Heading */
+@media (max-width: 768px) {
+    .T-PIMS{
+        padding-top: 40px;
+    }
+    .T-PIMS .section-head,
+    .T-PIMS .section-para{
+        margin: 1rem 0;
+        padding: 0 10px;
+    }
+}
+
+/* What and Why T-PIMS */
+.What {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow: hidden;
+  padding: 20px;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  font-size: 1.5rem;
+}
+
+.What .book-container {
+  max-width: 1200px;
+  perspective: 2000px;
+  /* position: relative; */
+}
+
+.What .book {
+  width: 1200px;
+  height: 550px;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s; 
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.What .page {
+  width: 100%;
+  height: 100%;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  backface-visibility: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 20px 40px rgba(24, 27, 160, 1.5);
+  padding: 0;
+  overflow: hidden;
+  flex-direction: row;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.What .book-img {
+  width: 50%;
+  height: 100%;
+  background: url(MainImg.png) no-repeat center;
+  background-size: cover;
+}
+
+.What .text{
+  width: 70%;
+  padding: 30px;
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  overflow-y: auto;
+  position: relative;
+   max-height: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+ .What .text2{
+    width: 70%;
+    padding: 15px;
+    display: block; 
+    box-sizing: border-box;
+    text-align: left;           
+    overflow-y: auto;                        /* allows vertical scroll */
+    overflow-x: hidden;
+    height: 100%;                           /* limit height */
+    -webkit-overflow-scrolling: touch;     /* smooth scrolling on mobile */
+} 
+
+.What .text2 a {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.What .text i, .What .text2  i {
+  margin-left: 5px;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+.What .text a:hover i, .text2 a:hover i {
+  transform: translateX(5px);
+}
+
+/* Flip angles for each page */
+#page1 { transform: rotateY(360deg); }
+#page2 { transform: rotateY(540deg); }
+
+/* Responsive for flip card */
+/* @media(min-width: 1024px){
+    .What .book{
+        width: 90%;
+        height: auto;
+        flex-direction: column;
+        /* optional: disable 3D rotation on touch devices */
+        /* transform: none; 
+    }
+    .What .page{
+        flex-direction: column;
+        height: auto;
+        padding: 20px 10px;
+    }
+    .What .book-img{
+        width: 100%;
+        height: 200px;
+    }
+    .What .text,
+    .What .text2{
+        width: 100%;
+        font-size: 18px;
+        padding: 15px;
+        text-align: center;
+        align-items: center;
+    }
+    .What .text h2,
+    .What .text2 h1,
+    .What .text2 h2,
+    .What .text2 .h3{
+        text-align: center;
+        padding: 5px 0;
+        margin: 0;
+    }
+    .What .text2 .start-over{
+        text-align: center;
+        margin-top: 10px;
+    }
+} */ 
+  @media (max-width: 710px){
+    .What{
+        height: 100vh;
+        height: -webkit-fill-available;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;  
+        /* Prevent scroll bounce  and layout shifts */
+        /* overscroll-behavior: none; */
+        /* proper flex behavior */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 15px;
+        padding: 40px 20px;
+    }
+    .What .book-container{
+        width: 95%;
+        height: 550px;
+    }
+    .What .page{
+        flex-direction: column;
+    }
+    .What .book-img, .What .text, .text2{
+        width: 100%;
+        height: auto;
+    }
+    .What .text, .What .text2{ 
+        width: 100%;
+        padding: 20px;
+         text-align: center;
+        align-items: center;
+        font-size: 16px;
+        flex: 1; 
+}
+} 
+@media(max-width: 600px){
+    .What{
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        padding: max(10px, env(safe-area-inset-top)), max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left));
+    }
+    .What .book{
+        width: 100%;
+    }
+    .What .text,
+    .What .text2{
+        font-size: 1rem;
+        line-height: 1.4; 
+       padding: 15px;
+    }
+    .What .text a,
+    .What .text2 a{
+        font-size: 1rem; 
+ }
+}
+
+  
+
+
+/* Additional mobile-specific fixes */
+/* @media (max-width: 768px) {
+    .What .page{
+        flex-direction: column;
+        padding: 20px;
+        text-align: center;
+    }
+    .What .book-img{
+     width: 100%;
+     min-height: 180px;
+    }
+    .What .page .text,
+    .What .page .text2{
+        width: 100%;
+        text-align: center;
+        padding: 0;
+    }
+    .What .page a.prevent-default{
+        margin-top: 15px;
+    } */
+    /* Prevent horizontal scrolling */
+    /* html, body {
+        overflow-x: hidden;
+    } */
+    
+    /* Fix for iOS Safari address bar */
+    /* html {
+        height: 100vh;
+        height: -webkit-fill-available;
+    } */
+    
+    /* body {
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+    }
+} */
+  @media (max-width: 1200px) { 
+   .What {  
+    margin: 20px 10px 20px 30px; 
+     padding: 10px;  
+     font-size: 1.2rem;
+    height: auto; 
+    /* display: flex;  */
+    /* justify-content: center; */
+    /* align-items: flex-start; */
+    /* flex-direction: column;*/
+         
+   }  
+  
+
+ /* .What .book {
+    width: 100%;
+    height: auto;
+    flex-direction: column;
+  }  */
+
+   .What .page { 
+     /* flex-direction: column;         Stack image and text vertically */
+    /* height: auto; */
+    text-align: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    width: 100%;
+   } 
+
+   .What .book-img {
+    width: 100%;
+    min-height: 200px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 10px;
+  }
+
+  .What .page .text,
+  .What .page .text2 {
+    width: 100%;
+    height: auto;
+    padding: 15px; 
+    /* text-align: center; */
+    /* font-size: 1rem; */
+    /* line-height: 1.6; */
+   } 
+
+.What .page h2{
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 10px;
+}
+  .What .page h2 img {
+    height: 22px;
+    vertical-align: middle;
+    margin-bottom: 4px;
+  }
+
+   .What .page a.prevent-default {
+    margin-top: 20px;
+    font-size: 0.95rem;
+    display: inline-block;
+  } 
+   }  
+@media (min-width: 1200px) {
+  .What {
+    padding: 40px 6vw;
+  }
+
+ .What .book-container {
+    max-width: 1000px;
+    width: 100%;
+  }
+
+  .What .page {
+    gap: 24px;
+    padding: 30px;
+  }
+
+  .What.book-img {
+    flex: 1 1 45%;
+    min-height: 250px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  .What .page .text,
+  .What .page .text2 {
+    flex: 1 1 55%;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  .What .page h2 {
+    font-size: 1.2rem;
+  }
+
+  .What .page h2 img {
+    height: 26px;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+
+  .What .page a.prevent-default {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+}
+@media screen and (min-width: 2560px) {
+  .What .book-container {
+    max-width: 1440px; /* can expand layout slightly */
+    max-height: 800px;
+  }
+
+  .What .book {
+    width: 1440px; /* scale up the 3D book */
+    height: 650px;
+  }
+
+  .What .text,
+  .What .text2 {
+    font-size: 1.2rem;
+    padding: 40px;
+  }
+
+  .What .text2 a {
+    font-size: 22px;
+  }
+
+  .What .text2 .start-over {
+    font-size: 20px;
+  }
+}
+
+
+/* 7 Modules of T-PIMS */
+ 
+     .list .text{
+        max-width: fit-content;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        border: 1px solid #000;
+        border-radius: 5px;
+        white-space: nowrap;
+        background-color: #f9f9f9;
+        transition: background-color 0.3s;
+        font-size: 20px;
+        font-family: 'Poppins', sans-serif;
+        text-align: center;
+         box-shadow: 0 0 5px rgba(0,0,0,0.8);
+    } 
+   .list .swiper-slide{
+    flex-shrink: 0;
+    width: auto;
+   }
+   .list .swiper{
+    position: relative;
+   }
+   .list .swiper-slide{
+    display: flex;
+   }
+ .list .swiper-slide:hover{
+    background-color: aqua;
+ }
+    .list .container{
+        box-sizing: border-box;
+        padding: 20px 40px;
+        /* overflow: hidden; */
+        position: relative;
+        width: 100%;
+        max-width: 100%;
+        /* margin: 0 60px 50px; */
+    }
+    
+    /* Responsive code for 768 px */
+    @media screen and (max-width: 768px) {
+  .list .text {
+    font-size: 16px;
+    padding: 0.4rem 0.8rem;
+    white-space: normal; /* Allow wrapping on smaller screens */
+    text-align: center;
+  }
+
+  .list .swiper-slide {
+    flex-direction: column; /* Stack vertically if needed */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .list .container {
+    padding: 10px 20px;
+  }
+}
+
+/* Responsive code for 2560px */
+    @media (min-width: 2560px) {
+  .list {
+    padding: 60px 10vw;
+  }
+
+  .list .swiper-wrapper {
+    gap: 30px;
+    justify-content: center;
+  }
+
+  .list .swiper-slide {
+    flex: 0 0 auto;
+    min-width: 220px;
+    font-size: 1.5rem;
+    padding: 20px 30px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+
+  .list .swiper-slide:hover {
+    transform: scale(1.05);
+  }
+
+  .container.swiper {
+    max-width: 1800px;
+    margin: 0 auto;
+  }
+}
+
+    /* Content for modules */
+    .content {
+      display: none;
+      margin-top: 10px;
+      margin-bottom: 13px;
+      /* border: 1px solid #ccc; */
+      padding: 10px;
+      transition: opacity 0.6s ease-in-out;
+    }
+    .content p{
+        font-size: 22px;
+    }
+    .content li{
+        font-size: 15px;
+    }
+    .content img{
+        margin-left: 20px;
+        height: auto;
+         border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(24, 27, 160, 1.5);
+    }
+    .content.active {
+      display: flex;
+      gap: 20px;
+    }
+
+    .horizontal-list li:hover{
+        background-color: aqua;
+        transition: 0.3s;
+    }
+
+    /* Responsive design */
+        @media (max-width: 768px) {
+            .list{
+                flex-wrap: wrap;
+                gap: 10px;
+                padding: 10px;
+                justify-content: center;
+            }
+            .content {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 15px;
+            }
+            
+            .content img {
+                max-width: 100%;
+                height: auto;
+                margin: 0;
+            }
+            .content li{
+                font-size: 14px;
+            }
+            .list .text {
+              width: 100%;
+                font-size: 16px;
+                padding: 0.4rem 0.8rem;
+                /* white-space: normal; allow text to wrap */
+                text-align: center;
+                min-width: 100px;
+            }
+            .swiper-button-next,
+            .swiper-button-prev{
+                display: none;
+            }
+            
+        }
+
+/* 3D Boooks */
+.book3D{
+width: 100%;
+flex-wrap: wrap;
+	min-height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+}
+.book3D .book {
+	width: 350px;
+	height: 500px;
+	position: relative;
+	box-shadow: -40px 20px 50px rgba(0,0,0,0.4);
+	transform-style: preserve-3d;
+	transition: 1s;
+}
+
+.book3D .book:before {
+	content: '';
+	position: absolute;
+	left: -20px;
+	width: 20px;
+	height: 100%;
+	background: linear-gradient(90deg, skyblue, #111);
+	transform: skewY(-3deg) rotateY(-50deg);
+	transform-origin: right;
+}
+
+.book3D .book-img {
+	background-size: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform: perspective(2000px);
+	transform-style: preserve-3d;
+	transform-origin: left;
+	transition: 1s;
+}
+
+.book3D .book:hover .book-img {
+    cursor: grab;
+	transform: perspective(2000px) rotateY(-140deg);
+}
+
+.book3D .text {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	flex-direction: column;
+	border: 1px solid rgba(0,0,0,0.2);
+	box-shadow: inset 350px 0 50px rgba(0,0,0,0.1);
+	transition: 1s;
+}
+.book3D .book:hover .text {
+	box-shadow: inset 20px 0 25px rgba(0,0,0,0.1);
+}
+
+.book3D .text h2 {
+	font-size: 30px;
+	margin-bottom: 20px;
+}
+
+.book3D .text p {
+	line-height: 1.7;
+	font-size: 15px;
+	color: #444;
+	margin-bottom: 15px;
+}
+
+.book3D .text .read-more-btn {
+	text-decoration: none;
+	letter-spacing: 0.7px;
+	font-size: 14px;
+}
+
+.book3D .text .read-more-btn i {
+	transition: 0.5s;
+}
+
+ .book3D .text .read-more-btn:hover i {
+	transform: translateX(10px);
+}
+
+        
+         /* Responsive for book3D*/
+        @media (max-width: 480px) {
+            .book{
+                gap: 25px;
+                width: 350px;
+                height: 550px;
+            }
+        }
+        @media (max-width: 768px) {
+            .book3D{
+                gap: 25px;
+                flex-direction: column;
+                height: auto;
+                padding: 40px 20px;
+            }
+            .book3D .book{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+                width: 90%;
+                height: auto;
+            }
+            .book3D .book-img{
+                width: 100%;
+                height: 250px;
+                background-size: cover;
+                border-radius: 8px;
+            }
+            .book3D .text{
+                width: 100%;
+                position: static;
+                padding: 20px;
+                height: auto;
+                border-radius: 8px;
+                background: white;
+            }
+            .book3D .text h2{
+                font-size: 24px;
+            }
+            .book3D .text p{
+                font-size: 14px;
+            }
+
+        }
+
+/* seeTPIMS */
+.seeTPIMS {
+    background-image: url(0052A4.png);
+    color: whitesmoke;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 0;
+    padding: 60px 60px 60px 60px;
+}
+.seeTPIMS img{
+    height: 150px;
+}
+
+.seeTPIMS .section-content h2{
+    text-align: center;
+    font-size: 38px;
+    font-weight: 700;
+    font-style: italic;
+    padding: 0 0 20px;
+}
+.seeTPIMS .section-content p{
+    font-size: 33px;
+    font-weight: 500;
+    padding: 0 0 20px;
+}
+.seeTPIMS .section-content h3{
+font-size: 28px;
+}
+.seeTPIMS .contact-wrapper {
+    pointer-events: auto;
+    cursor: pointer;
+    text-align: center;
+    padding: 30px;
+}
+.seeTPIMS .contact-us{
+    display: inline-block;
+    color: white;
+    font-size: 33px;
+}
+
+/* Responsive for seeTIPMS section */
+@media (max-width: 768px) {
+    .seeTPIMS{
+        padding: 30px 20px;
+        text-align: center;
+    }
+    .seeTPIMS img{
+        height: 100px;
+        margin-bottom: 20px;
+    }
+    .seeTPIMS .section-content p{
+        font-size: 20px;
+        padding-bottom: 15px;
+    }
+    .seeTPIMS .contact-us{
+        font-size: 22px;
+    }
+}
+/* Responsive for seeTIPMS 480px */
+@media (max-width: 480px) {
+    .seeTPIMS{
+        padding: 25px 15px;
+    }
+    .seeTPIMS img{
+        height: 80px;
+    }
+    .seeTPIMS .section-content h2{
+       font-size: 22px;
+    }
+    .seeTPIMS .section-content p{
+        font-size: 18px;
+    }
+    .seeTPIMS .contact-us{
+        font-size: 20px;
+    }
+}
